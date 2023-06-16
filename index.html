@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>중앙대학교 배리어프리 지도</title>
+  <style>
+    body {
+      display: flex;
+    }
+
+    #map {
+      width: 50%;
+      height: 100vh;
+      border: none;
+    }
+
+    #sidebar {
+      width: 50%;
+      padding: 20px;
+    }
+
+    .keyword-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .subkeyword-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 5px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      text-align: left;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+  <iframe id="map" src="https://www.google.com/maps/d/u/0/embed?mid=1iryQ_2JidwmjTEcPMZA7bBOdYZA6qCA&ehbc=2E312F"></iframe>
+
+  <div id="sidebar">
+    <h1>중앙대학교 배리어프리 지도</h1>
+
+    <div id="keywords">
+      <button class="keyword-btn" onclick="showSubkeywords('가. 102관')">가. 102관</button>
+      <div id="subkeywords-가. 102관" style="display: none;">
+        <button class="subkeyword-btn" onclick="showDetails('가. 102관', '맥도날드 중앙대점')">맥도날드 중앙대점</button>
+        <button class="subkeyword-btn" onclick="showDetails('가. 102관', '홍당무')">홍당무</button>
+        <button class="subkeyword-btn" onclick="showDetails('가. 102관', '북촌순두부&주꾸미')">북촌순두부&주꾸미</button>
+        <button class="subkeyword-btn" onclick="showDetails('가. 102관', '중앙대학교 구내서점')">중앙대학교 구내서점</button>
+        <button class="subkeyword-btn" onclick="showDetails('가. 102관', '모닝글로리 중앙대 1호점')">모닝글로리 중앙대 1호점</button>
+        <button class="subkeyword-btn" onclick="showDetails('가. 102관', '블루포트')">블루포트</button>
+        <button class="subkeyword-btn" onclick="showDetails('가. 102관', 'LOGO SHOP')">LOGO SHOP</button>
+        <button class="subkeyword-btn" onclick="showDetails('가. 102관', '우리은행')">우리은행</button>
+        <button class="subkeyword-btn" onclick="showDetails('가. 102관', 'UNIVERSITY CLUB')">UNIVERSITY CLUB</button>
+      </div>
+
+      <button class="keyword-btn" onclick="showSubkeywords('나. 301관')">나. 301관</button>
+      <div id="subkeywords-나. 301관" style="display: none;">
+        <button class="subkeyword-btn" onclick="showDetails('나. 301관', '블루포트')">블루포트</button>
+      </div>
+
+      <button class="keyword-btn" onclick="showSubkeywords('다. 303관')">다. 303관</button>
+      <div id="subkeywords-다. 303관" style="display: none;">
+        <button class="subkeyword-btn" onclick="showDetails('다. 303관', 'Cafe Dream')">Cafe Dream</button>
+        <button class="subkeyword-btn" onclick="showDetails('다. 303관', '법학관 식당')">법학관 식당</button>
+      </div>
+
+      <button class="keyword-btn" onclick="showSubkeywords('라. 308관')">라. 308관</button>
+      <div id="subkeywords-라. 308관" style="display: none;">
+        <button class="subkeyword-btn" onclick="showDetails('라. 308관', '308관 식당')">308관 식당</button>
+        <button class="subkeyword-btn" onclick="showDetails('라. 308관', '발도스 커피')">발도스 커피</button>
+        <button class="subkeyword-btn" onclick="showDetails('라. 308관', 'CU')">CU</button>
+      </div>
+
+      <button class="keyword-btn" onclick="showSubkeywords('마. 309관')">마. 309관</button>
+      <div id="subkeywords-마. 309관" style="display: none;">
+        <button class="subkeyword-btn" onclick="showDetails('마. 309관', '309관 식당')">309관 식당</button>
+        <button class="subkeyword-btn" onclick="showDetails('마. 309관', 'CU')">CU</button>
+      </div>
+
+      <button class="keyword-btn" onclick="showSubkeywords('바. 310관')">바. 310관</button>
+      <div id="subkeywords-바. 310관" style="display: none;">
+        <button class="subkeyword-btn" onclick="showDetails('바. 310관', '참슬기')">참슬기</button>
+        <button class="subkeyword-btn" onclick="showDetails('바. 310관', 'CAU BURGER')">CAU BURGER</button>
+        <button class="subkeyword-btn" onclick="showDetails('바. 310관', '중앙대학교 우편취급국')">중앙대학교 우편취급국</button>
+        <button class="subkeyword-btn" onclick="showDetails('바. 310관', '헤어앤유')">헤어앤유</button>
+        <button class="subkeyword-btn" onclick="showDetails('바. 310관', '안경점')">안경점</button>
+        <button class="subkeyword-btn" onclick="showDetails('바. 310관', '파머스플라워')">파머스플라워</button>
+        <button class="subkeyword-btn" onclick="showDetails('바. 310관', '모닝글로리')">모닝글로리</button>
+        <button class="subkeyword-btn" onclick="showDetails('바. 310관', '뚜레쥬르')">뚜레쥬르</button>
+        <button class="subkeyword-btn" onclick="showDetails('바. 310관', '310쌀국수')">310쌀국수</button>
+        <button class="subkeyword-btn" onclick="showDetails('바. 310관', '세븐일레븐')">세븐일레븐</button>
+        <button class="subkeyword-btn" onclick="showDetails('바. 310관', 'Cafe Dream')">Cafe Dream</button>
+      </div>
+
+      <button class="keyword-btn" onclick="showSubkeywords('장애인 화장실')">장애인 화장실</button>
+      <div id="subkeywords-장애인 화장실" style="display: none;">
+        <button onclick="showDetails('장애인 화장실', '가. 101관')">가. 101관</button>
+        <button onclick="showDetails('장애인 화장실', '나. 102관')">나. 102관</button>
+        <button onclick="showDetails('장애인 화장실', '다. 103관')">다. 103관</button>
+        <button onclick="showDetails('장애인 화장실', '라. 104관')">라. 104관</button>
+        <button onclick="showDetails('장애인 화장실', '마. 105관')">마. 105관</button>
+        <button onclick="showDetails('장애인 화장실', '바. 106관')">바. 106관</button>
+        <button onclick="showDetails('장애인 화장실', '사. 107관')">사. 107관</button>
+        <button onclick="showDetails('장애인 화장실', '아. 201관')">아. 201관</button>
+        <button onclick="showDetails('장애인 화장실', '자. 202관')">자. 202관</button>
+        <button onclick="showDetails('장애인 화장실', '차. 203관')">차. 203관</button>
+        <button onclick="showDetails('장애인 화장실', '카. 204관')">카. 204관</button>
+        <button onclick="showDetails('장애인 화장실', '타. 207관')">타. 207관</button>
+        <button onclick="showDetails('장애인 화장실', '파. 208관')">파. 208관</button>
+        <button onclick="showDetails('장애인 화장실', '하. 209관')">하. 209관</button>
+        <button onclick="showDetails('장애인 화장실', '거. 301관')">거. 301관</button>
+        <button onclick="showDetails('장애인 화장실', '너. 302관')">너. 302관</button>
+        <button onclick="showDetails('장애인 화장실', '더. 303관')">더. 303관</button>
+        <button onclick="showDetails('장애인 화장실', '러. 304관')">러. 304관</button>
+        <button onclick="showDetails('장애인 화장실', '머. 305관')">머. 305관</button>
+        <button onclick="showDetails('장애인 화장실', '버. 310관')">버. 310관</button>
+      </div>
+      <button onclick="showDetails('가. 101관')">가. 101관</button>
+      <button onclick="showDetails('나. 102관')">나. 102관</button>
+      <button onclick="showDetails('다. 103관')">다. 103관</button>
+      <button onclick="showDetails('라. 104관')">라. 104관</button>
+      <button onclick="showDetails('마. 105관')">마. 105관</button>
+      <button onclick="showDetails('바. 106관')">바. 106관</button>
+      <button onclick="showDetails('사. 107관')">사. 107관</button>
+      <button onclick="showDetails('아. 201관')">아. 201관</button>
+      <button onclick="showDetails('자. 202관')">자. 202관</button>
+      <button onclick="showDetails('차. 203관')">차. 203관</button>
+      <button onclick="showDetails('카. 204관')">카. 204관</button>
+      <button onclick="showDetails('타. 207관')">타. 207관</button>
+      <button onclick="showDetails('파. 208관')">파. 208관</button>
+      <button onclick="showDetails('하. 209관')">하. 209관</button>
+      <button onclick="showDetails('거. 301관')">거. 301관</button>
+      <button onclick="showDetails('너. 302관')">너. 302관</button>
+      <button onclick="showDetails('더. 303관')">더. 303관</button>
+      <button onclick="showDetails('러. 304관')">러. 304관</button>
+      <button onclick="showDetails('머. 305관')">머. 305관</button>
+      <button onclick="showDetails('버. 310관')">버. 310관</button>
+
+    </div>
+  </div>
+
+  <div class="details">
+    <h3 id="facility-name"></h3>
+    <ul id="facility-details"></ul>
+  </div>
+  
+</div>
+
+<script>
+  function showSubkeywords(keyword) {
+    var subkeywordId = "subkeywords-" + keyword;
+    var subkeywords = document.getElementById(subkeywordId);
+    if (subkeywords.style.display === "none") {
+      subkeywords.style.display = "block";
+    } else {
+      subkeywords.style.display = "none";
+    }
+  }
+
+
+  function showDetails(mainKeyword, subKeyword) {
+    var detailsTitle = document.getElementById("facility-name");
+    var detailsList = document.getElementById("facility-details");
+
+    if (subKeyword) {
+      detailsTitle.textContent = subKeyword;
+      detailsList.innerHTML = "";
+    }
+    else {
+      detailsTitle.textContent = mainKeyword;
+      detailsList.innerHTML = "";
+    }
+
+
+    fetch("conv_data.json")
+     .then(response => response.json())
+     .then(data => {
+       var facilityData = data;
+       var details;
+       
+       if (subKeyword) {
+        details = facilityData[mainKeyword][subKeyword];
+       } else {
+        details = facilityData[mainKeyword];
+       }
+       for (var i = 0; i < details.length; i++) {
+          var listItem = document.createElement("li");
+         listItem.textContent = details[i];
+          detailsList.appendChild(listItem);
+       }
+     })
+     .catch(error => {
+       console.log("Error:", error);
+      });
+  
+  }
+
+
+
+</script>
+
+</body>
+</html>

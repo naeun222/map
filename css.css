@@ -1,0 +1,34 @@
+#mapContainer {
+  position: relative;
+}
+
+#keywordContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px; /* 적절한 너비 조정 */
+  padding: 10px;
+  background-color: white;
+}
+
+.keyword {
+  cursor: pointer;
+  margin-bottom: 5px;
+  text-align: right;
+}
+
+.subKeywords {
+  display: none;
+}
+
+.subKeywordButton {
+  margin-left: 10px;
+}
+#container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  #keywordList {
+    margin-right: 30px;
+  }
